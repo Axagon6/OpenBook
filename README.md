@@ -84,6 +84,22 @@ Conform specificațiilor primite prin tema de proiect, dispozitivul este constru
 ### Control tactil
 - **Butoane:** 3 butoane conectate la pinii GPIO ai microcontrolerului
 
+## Estimarea consumului de energie
+Pe baza consumurilor medii uzuale ale tuturor componentelor active din schema electronică am realizat un calcul estimativ al consumului dispozitivului:
+| Componentă             | Descriere                    | Consum tipic estimat        |
+|------------------------|------------------------------|-----------------------------|
+| ESP32-C6-WROOM-1       | Microcontroller WiFi/BLE     | ~80 mA (mediu activ)        |
+| DS3231SN               | Ceas RTC                     |  ~0.2 mA                    |
+| MAX17048               | Fuel Gauge                   |  ~0.1 mA                    |
+| BME680                 | Senzor gaz/temp/umiditate    | ~2.1 mA (mod normal)        |
+| W25Q512JVEIQ           | Memorie NOR Flash            | ~5.0 mA (activ)             |
+| MCP73831               | Battery charger              | ~1.0 mA standby             |
+| LDO XC6220A331MR-G     | Stabilizator tensiune        | ~1.0 mA (quiescent)         |
+| LED                    | LED indicator                | ~5-10 mA                    |
+
+**Consum total estimat: ~100mA**  
+La o tensiune de alimentare de ~3.3V rezultă **~330mW**.  
+Nu am luat în calcul consumul ecranului tip e-paper deoarece în repaus acesta practic nu consumă energie, consumul specificat de producător fiind de circa 48mW doar pe perioada de refresh a ecranului.
 
 ## Microcontrolerul ESP32-C6
 ![ESP32C6 v3](https://github.com/user-attachments/assets/0ad33f10-aa5b-4395-b8d9-ef7288708a18)
@@ -120,7 +136,12 @@ Pinii sunt utilizați în următoarea configurație:
 - **USB_D+ : GPIO12** linie comunicație USB
 - **USB_D- : GPIO13** linie comunicație USB
 
-## Etape de realizare a proiectului
+## Etapele de realizare a proiectului
+
+I. **Documentare**  
+În cadrul acestei etape am parcurs documentația descriptivă a produsului și schema electronică, după care am realizat diagrama bloc, care surprinde în mod sintetic principalele componente, conexiunile dintre acestea și tipurile de protocoale de comunicație utilizate.
+
+II. **Proiectare în Autodesk Fusion 360**  
 1. **Circuitul electronic (schematics)**
 Fiind vorba despre un circuit complex, am optat pentru realizarea fiecărui modul în mod individual, în fișiere separate, care la final au fost importate în schema completă a e-bookului.
 Pentru componentele electronice am folosit exclusiv librăria DeskAssistant, spoecificată în tema proiectului.
@@ -142,8 +163,12 @@ Am omis cablul de date pentru ecran cât și firele bateriei.
 5. **Asamblarea componentelor în modelul 3D**
 Deși am avut unele emoții, componentele s-au potrivit destul de bine cu carcasa furnizată, fiind necesare doar mici retușuri la poziționarea fantelor pentru conectori.
 Am preferat să aduc modificări carcasei decât PCB-ului.
-
 Iată o imagine exploded a device-ului:
 ![Image4](Images/Image4.png)
+6. **Generarea fișierelor necesare pentru repository**
+Conform cerințelor temei, am exportat fișierele schematics, board, step, imagini precum și pachetul complet tip arhivă f3z specific platformei CAD utilizate, precum și fișierele generate de aplicație în secțiunea CAM (_gerbers_, _pick and place_, _bom_, etc). Am observat că Fusion 360 nu folosește exact extensiile de fișiere specificate în tema proiectului, (de exemplu în loc de _.cpl_ a generat _.mnt_) însă sunt similare ca și conținut și destinație.
 
+III. **Creare repository și scriere README**
+Am creat un repository având structura și conținutul specificate în tema proiectului.
+De asemenea am încercat ca la scrierea readme-ului să respect sugestiile și ordinea indicate în cerințele temei.
 
