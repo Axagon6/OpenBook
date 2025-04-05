@@ -2,7 +2,7 @@
 ## Proiect TSC: Dezvoltarea unui e-book reader ieftin și open source
 
 ## **Diagrama bloc**
-![Schema EBOOK ver1](https://github.com/user-attachments/assets/107f6f23-2cda-4d27-b157-410a032e4d04)
+![Schema EBOOK ver1](https://github.com/user-attachments/assets/0d097798-ceb8-4352-8268-19c9c541e6c8)
 
 ## Lista componentelor necesare (BOM)
 
@@ -86,7 +86,8 @@ Conform specificațiilor primite prin tema de proiect, dispozitivul este constru
 
 
 ## Microcontrolerul ESP32-C6
-![ESP32C6 v3](https://github.com/user-attachments/assets/3010912a-f46c-41d8-b995-c710b5dea04d)
+![ESP32C6 v3](https://github.com/user-attachments/assets/0ad33f10-aa5b-4395-b8d9-ef7288708a18)
+
 Microcontrolerul ESP32-C6 este foarte versatil în ceea ce privește funcțiile pinilor GPIO, majoritatea fiind configurabili din software.
 Pinii sunt utilizați în următoarea configurație:
 ### Protocolul I2C
@@ -143,6 +144,6 @@ Deși am avut unele emoții, componentele s-au potrivit destul de bine cu carcas
 Am preferat să aduc modificări carcasei decât PCB-ului.
 
 Iată o imagine exploded a device-ului:
-![Image4](https://github.com/user-attachments/assets/963ca7ad-6ad4-4756-994c-a727d9b40016)
+![Image4](Images/Image4.png)
 
 
