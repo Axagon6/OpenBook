@@ -166,7 +166,7 @@ Am preferat să aduc modificări carcasei decât PCB-ului.
 Iată o imagine exploded a device-ului:
 ![Image4](Images/Image4.png)
 6. **Generarea fișierelor necesare pentru repository**
-Conform cerințelor temei, am exportat fișierele schematics, board, step, imagini precum și pachetul complet tip arhivă f3z specific platformei CAD utilizate, precum și fișierele generate de aplicație în secțiunea CAM (_gerbers_, _pick and place_, _bom_, etc). Am observat că Fusion 360 nu folosește exact extensiile de fișiere specificate în tema proiectului, (de exemplu în loc de _.cpl_ a generat _.mnt_) însă sunt similare ca și conținut și destinație.
+Conform cerințelor temei, am exportat fișierele schematics (extensia _.fsch_), board (extensia _.fbrd_), step, imagini, pachetul complet tip arhivă f3z specific platformei CAD utilizate. În ce privește fișierele spepecifice folderului **Manufacturing** acestea le-am obținut direct din Fusion 360 în secțiunea CAM (_gerbers_, _pick and place_, _bom_, etc). Am observat că Fusion 360 exportă toate aceste fisiere într-un pachet zip, din care am extras fișierele specificate în tema proiectului, chiar dacă extensiile nu corespund (de exemplu în loc de _.cpl_ a generat un fișier _.txt_ ).
 
 III. **Creare repository și scriere README**
 Am creat un repository având structura și conținutul specificate în tema proiectului.
