@@ -101,7 +101,7 @@
 * ✅ Dimensiunea textului în limitele producătorului.
 * ⏳ Textul nu se suprapune cu găuri sau pad-uri de componente. (Vezi issue #3)
 * ✅ Textul eliminat complet sau mutat în afara zonelor aglomerate cu componente/via-uri.
-* ⏳ Punctele de test etichetate dacă spațiul permite. (Vezi issue #4)
+* ✅ Punctele de test etichetate dacă spațiul permite.
 
 
 ## Producție CAM
@@ -109,9 +109,19 @@
 * ✅ Export fișierele Gerber, cpl.
 
 
-# 3. Readme
+# 3. Structura de foldere și fișiere
 
-* ⏳ Diagrama block cu toate componentele și cum sunt ele conectate. (Vezi issue #5)
+* ✅ Fisier Readme.
+* ✅ Fisier License.
+* ✅ Folder Hardware cu 2 fisiere sch + brd
+* ✅ Folder Manufacturing cu fisiere gerbers, bom și cpl
+* ⏳ Folder Mechanical cu fișiere 3D .step și .f3z (Vezi issue #4)
+* ✅ Folder images cu imagini, randări, etc.
+
+
+# 4. Readme
+
+* ✅ Diagrama block cu toate componentele și cum sunt ele conectate.
 * ✅ Bill Of Materials.
 * ✅ Descrierea în detaliu a funcționalității hardware.
 * ✅ Descrierea în detaliu a funcționalității pinilor ESP32-C6.
